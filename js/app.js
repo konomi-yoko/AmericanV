@@ -32,3 +32,31 @@ window.addEventListener('DOMContentLoaded', function(){
       $('#drower-bg').fadeOut(600);
     }
   } 
+
+
+  var maxpage = 6;
+
+  $('#loadin').css('displa', 'non');
+  $.autopager({
+  content: '.new-pos',
+  link: '#next a',
+  autoLoad: false,
+  
+  start: function(current, next){
+  $('#loading').css('display', 'block');
+  $('#next a').css('display', 'none');
+  },
+  
+  load: function(current, next){
+    $('#loading').css('display', 'none');
+    $('#next a').css('display', 'block');
+    if( current.page >= maxpage ){
+      $('#next a').hide();
+      }
+      }
+      });
+  
+  $('#next a').click(function(){ 
+  $.autopager('load'); 
+  return false;
+  });

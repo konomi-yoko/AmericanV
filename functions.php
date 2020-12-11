@@ -61,3 +61,19 @@ function removeMenuClass( $classes ) {
   return $classes = array();
 } 
 add_filter( 'nav_menu_css_class', 'removeMenuClass', 10, 2 );
+
+function add_my_ajaxurl() {
+  ?>
+      <script>
+          var ajaxurl = '<?php echo admin_url( 'admin-ajax.php'); ?>';
+      </script>
+  <?php
+  }
+  add_action( 'wp_head', 'add_my_ajaxurl', 1 );
+
+  function view_sitename(){
+    echo get_bloginfo( 'name' );
+    die();
+}
+add_action( 'wp_ajax_view_sitename', 'view_sitename' );
+add_action( 'wp_ajax_nopriv_view_sitename', 'view_sitename' );
