@@ -40,7 +40,7 @@
                 <li><a href="#">Menu03</a></li>
                 <li><a href="#">Menu04</a></li>
             </ul> -->
-            <div class="main-photo">
+             <div class="main-photo">
                 <!-- small-logo左上のロゴ -->
                 <img class="top-logo" src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="アメリカンビレッジロゴ">
                 <!-- ハンバーガー -->
@@ -48,7 +48,8 @@
                     <span></span>
                 </div>
                 <!-- ドロワー -->
-                <div id="drower-bg"></div>
+               
+             <div id="drower-bg"></div>
                 <ul class="drower js-drower">
                     <li class="drower-menu"><a href="#">Menu01</a</li>
                     <li class="drower-menu"><a href="#">Menu01</a</li>
@@ -113,7 +114,12 @@
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/visual_text_sp.png" media="(max-width: 767px)">
                         <img class="sign-logo" src="<?php echo get_template_directory_uri(); ?>/img/visual_text_pc.png" alt="アメリカンビレッジのサインロゴ">
                     </picture>
-                <p>進化し続ける「街」<br class="header-br">アメリカンビレッジマガジン<p>
                 </div>
             </div>
+            <div class="magazine-wrapper">
+                <p class="magazine"><span>進化し続ける「街」<br class="header-br">アメリカンビレッジマガジン</span><p>
+            </div>
+        </div>
+
     </header>
+ 
