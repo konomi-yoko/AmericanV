@@ -31,3 +31,33 @@ $custom_header_args = array(
 	'admin-preview-callback' => 'adminpreview_cb',
 );
 add_theme_support( 'custom-header', $custom_header_args );
+
+add_action( 'after_setup_theme', 'register_menu' );
+function register_menu() {
+  register_nav_menu( 'primary', __( 'Primary Menu', 'theme-slug' ) );
+}
+
+register_nav_menus( array(
+  'header' => 'ヘッダー',
+  'footer' => 'フッター'
+) );
+
+function my_nav_menu_id( $menu_id ){
+	// liタグのidを削除
+	$id = NULL;
+    return $id;
+}
+add_filter( 'nav_menu_item_id', 'my_nav_menu_id' );
+
+
+//メニューの<li>からID除去
+function removeMenuId( $id ){
+  return $id = array();
+}
+add_filter('nav_menu_item_id', 'removeMenuId', 10);
+
+//メニューの<li>からクラス除去
+function removeMenuClass( $classes ) {
+  return $classes = array();
+} 
+add_filter( 'nav_menu_css_class', 'removeMenuClass', 10, 2 );

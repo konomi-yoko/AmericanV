@@ -21,12 +21,26 @@
    <header>
         <div class="container">
             <!-- headerここから -->
-            <ul id="nav">
+            <?php
+                if ( has_nav_menu( 'header' )){
+                    // メニューの設定を配列で指定
+                    $args = array(
+                        'theme_location' => 'header',
+                        'container' => false,
+                        'container_class' => 'menu',
+                        'link_before' => '<span>',
+                        'link_after' => '</span>',
+                        'items_wrap'      => '<ul id="nav">%3$s</ul>',
+                    );
+                    wp_nav_menu( $args ); 
+                }; 
+                ?>
+            <!-- <ul id="nav">
                 <li><a href="#">Menu01</a></li>
                 <li><a href="#">Menu02</a></li>
                 <li><a href="#">Menu03</a></li>
                 <li><a href="#">Menu04</a></li>
-            </ul>
+            </ul> -->
             <div class="main-photo">
                 <!-- small-logo左上のロゴ -->
                 <img class="top-logo" src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="アメリカンビレッジロゴ">
